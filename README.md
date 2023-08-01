@@ -9,3 +9,5 @@
 * A chave nessasária para executar LandmarkApp AIzaSyCDdoo5iy60m6POUQMnQEbAabgEtdp15EY
 * O ip e port por default do cliente são repetivamente "localhost" e 8000
   * Também os ambos são configurável no args
+
+Grade: 16/20
