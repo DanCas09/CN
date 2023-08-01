@@ -1,0 +1,1 @@
+gcloud functions deploy cn-topic-function-monitor --region=europe-west1 --entry-point=isel.cn.Monitor --runtime=java11 --trigger-topic cn-monitor --source=target/deployment --service-account=cn-fun-comp-pubsub-fire-str@cn2223-t1-g07.iam.gserviceaccount.com

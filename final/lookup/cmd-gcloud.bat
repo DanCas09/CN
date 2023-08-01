@@ -1,0 +1,1 @@
+gcloud functions deploy cn-http-function-lookup --project=cn2223-t1-g07 --region=europe-west1 --allow-unauthenticated --entry-point=isel.cn.Lookup --runtime=java11 --trigger-http --source=target/deployment --service-account=cn-fun-comp-pubsub-fire-str@cn2223-t1-g07.iam.gserviceaccount.com

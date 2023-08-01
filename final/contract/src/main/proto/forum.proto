@@ -1,0 +1,55 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "isel.cn";
+
+package isel.cn;
+
+// The Forum service definition.
+service VisionService {
+  rpc submitImage (stream Blocks) returns (Identifier);
+
+  rpc getImageInfo(Identifier) returns (stream Results);
+
+  rpc getLocationImage(Identifier) returns (stream Blocks);
+
+  rpc getImageNames(SearchRequest) returns (stream ImageNames);
+}
+
+message SearchRequest {
+  string local = 1;
+  float certainty = 2;
+}
+
+message ImageNames {
+  repeated string names = 1;
+}
+
+message Results {
+  repeated Result result = 1;
+}
+
+message Result {
+  string name = 1;
+  Localization localization = 2;
+  float certainty = 3;
+  Address address = 4;
+}
+
+message Address {
+  string country = 1;
+  string city = 2;
+}
+
+message Localization {
+  float latitude = 1;
+  float longitude = 2;
+}
+
+message Identifier {
+  string identifier = 1;
+}
+
+message Blocks {
+  string imageName = 1;
+  bytes block = 2;
+}
